@@ -1,10 +1,20 @@
 skills:
-  - name: example-skill
-    version: 0.1.0
-    status: active
-    owner: platform-team
-    tags:
-      - example
-      - template
-    path: skills/example-skill
-    description: 用于展示标准 Skill 目录结构与最小元数据要求的示例 Skill。
+- name: cn-city-wage-social-base
+  version: 0.1.0
+  status: draft
+  owner: unassigned
+  tags:
+  - china
+  - hr
+  - policy
+  path: skills/cn-city-wage-social-base
+  description: 查询中国大陆城市当前月最低工资与社保缴费基数上下限，并输出带官方出处的 Markdown 报告。
+- name: example-skill
+  version: 0.1.0
+  status: active
+  owner: platform-team
+  tags:
+  - example
+  - template
+  path: skills/example-skill
+  description: 用于展示标准 Skill 目录结构与最小元数据要求的示例 Skill。
