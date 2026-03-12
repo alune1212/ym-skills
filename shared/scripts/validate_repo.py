@@ -6,7 +6,13 @@ from pathlib import Path
 
 import yaml
 
-from shared.scripts.common import REGISTRY_PATH, REQUIRED_SKILL_FILES, SKILLS_DIR
+from shared.scripts.common import (
+    REGISTRY_PATH,
+    REQUIRED_SKILL_FILES,
+    SKILLS_DIR,
+    find_symlinks,
+    validate_skill_name,
+)
 
 
 def read_frontmatter(path: Path) -> dict:
@@ -22,6 +28,15 @@ def read_frontmatter(path: Path) -> dict:
 
 def validate_skill_dir(skill_dir: Path) -> list[str]:
     errors: list[str] = []
+    try:
+        validate_skill_name(skill_dir.name)
+    except ValueError as exc:
+        errors.append(f"{skill_dir}: {exc}")
+
+    symlinks = find_symlinks(skill_dir)
+    for symlink in symlinks:
+        errors.append(f"{skill_dir}: 包含符号链接 {symlink}")
+
     for relative in REQUIRED_SKILL_FILES:
         if not (skill_dir / relative).exists():
             errors.append(f"{skill_dir}: 缺少 {relative}")
@@ -102,4 +117,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

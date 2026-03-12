@@ -3,9 +3,14 @@ from __future__ import annotations
 import argparse
 import shutil
 import sys
-from pathlib import Path
 
-from shared.scripts.common import DIST_DIR, SKILLS_DIR
+from shared.scripts.common import (
+    DIST_DIR,
+    SKILLS_DIR,
+    ensure_within_directory,
+    find_symlinks,
+    validate_skill_name,
+)
 
 
 def main() -> int:
@@ -13,12 +18,23 @@ def main() -> int:
     parser.add_argument("name", help="Skill 名称")
     args = parser.parse_args()
 
-    source_dir = SKILLS_DIR / args.name
+    try:
+        skill_name = validate_skill_name(args.name)
+        source_dir = ensure_within_directory(SKILLS_DIR, SKILLS_DIR / skill_name, "source path")
+        target_dir = ensure_within_directory(DIST_DIR, DIST_DIR / skill_name, "target path")
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+
     if not source_dir.exists():
-        print(f"Skill 不存在：{args.name}", file=sys.stderr)
+        print(f"Skill 不存在：{skill_name}", file=sys.stderr)
         return 1
 
-    target_dir = DIST_DIR / args.name
+    symlinks = find_symlinks(source_dir)
+    if symlinks:
+        print(f"Skill 包含符号链接，拒绝打包：{symlinks[0]}", file=sys.stderr)
+        return 1
+
     if target_dir.exists():
         shutil.rmtree(target_dir)
     shutil.copytree(source_dir, target_dir)
@@ -28,4 +44,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

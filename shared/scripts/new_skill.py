@@ -1,20 +1,13 @@
 from __future__ import annotations
 
 import argparse
-import re
 import shutil
 import sys
 from pathlib import Path
 
 import yaml
 
-from shared.scripts.common import REGISTRY_PATH, SKILLS_DIR, TEMPLATE_DIR
-
-
-def validate_skill_name(name: str) -> str:
-    if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", name):
-        raise ValueError("skill 名称只能包含小写字母、数字和连字符，且必须以字母或数字开头。")
-    return name
+from shared.scripts.common import REGISTRY_PATH, SKILLS_DIR, TEMPLATE_DIR, validate_skill_name
 
 
 def replace_placeholders(base_dir: Path, skill_name: str) -> None:
@@ -80,4 +73,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
