@@ -1,0 +1,82 @@
+[
+  {
+    "query": "请查苏州市当前月最低工资和社保缴费基数上下限，给我原文摘录和官方直链。",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我核一下上海市最低工资标准，正文里要有摘录来源直链。",
+    "should_trigger": true
+  },
+  {
+    "query": "浦东新区员工入职要做测算，你帮我查最低工资和社保缴费基数，按所属城市输出。",
+    "should_trigger": true
+  },
+  {
+    "query": "我只需要广州的社保基数上下限，别给太多解释，给原文摘录和官方链接。",
+    "should_trigger": true
+  },
+  {
+    "query": "请查询佛山当前月最低工资，必须引用政府或人社官网原文。",
+    "should_trigger": true
+  },
+  {
+    "query": "苏州工业园区招人用，帮我查当前社保缴费基数上下限和最低工资，附出处。",
+    "should_trigger": true
+  },
+  {
+    "query": "麻烦核验一下成都市最新最低工资是多少，给我能点开的官方来源直链。",
+    "should_trigger": true
+  },
+  {
+    "query": "深圳这边做 offer 预算，想知道现在最低工资和社保基数，最好是直接摘录原文。",
+    "should_trigger": true
+  },
+  {
+    "query": "请按 Markdown 报告整理重庆市最低工资和缴费基数上下限，每个结论都要对应原文。",
+    "should_trigger": true
+  },
+  {
+    "query": "查一下武汉市社保缴费基数，如果市政府页只是摘要就继续找附件原文。",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我做杭州薪酬水平分析，看看研发岗平均工资大概多少。",
+    "should_trigger": false
+  },
+  {
+    "query": "解释一下最低工资法条对加班费的影响。",
+    "should_trigger": false
+  },
+  {
+    "query": "比较苏州和无锡的收入水平，给我一个表。",
+    "should_trigger": false
+  },
+  {
+    "query": "查广东省最低工资标准汇总，我想看全省版本。",
+    "should_trigger": false
+  },
+  {
+    "query": "我想知道上海社保政策最近有什么变化，写个趋势总结。",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我找深圳劳动合同、最低工资、加班费相关法律依据。",
+    "should_trigger": false
+  },
+  {
+    "query": "做一份全国主要城市社保缴费比例对比。",
+    "should_trigger": false
+  },
+  {
+    "query": "我手里有一篇新闻说南京最低工资涨了，帮我润色成通知邮件。",
+    "should_trigger": false
+  },
+  {
+    "query": "算一下苏州月薪一万到手多少，考虑社保公积金。",
+    "should_trigger": false
+  },
+  {
+    "query": "我只要官方人社局网站入口，不用你查最低工资或社保基数。",
+    "should_trigger": false
+  }
+]
