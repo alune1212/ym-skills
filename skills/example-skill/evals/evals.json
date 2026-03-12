@@ -1,0 +1,18 @@
+{
+  "skill_name": "example-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "给我一个公司内部 Skill 的标准目录结构。",
+      "expected_output": "应包含核心目录、文件说明，以及哪些部分由模板生成。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我想新增一个 Skill，应该先改哪些文件？",
+      "expected_output": "应说明 SKILL.md、README.md、CHANGELOG.md、evals/evals.json 和注册表。",
+      "files": []
+    }
+  ]
+}
+

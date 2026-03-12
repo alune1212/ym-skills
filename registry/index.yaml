@@ -1,0 +1,10 @@
+skills:
+  - name: example-skill
+    version: 0.1.0
+    status: active
+    owner: platform-team
+    tags:
+      - example
+      - template
+    path: skills/example-skill
+    description: 用于展示标准 Skill 目录结构与最小元数据要求的示例 Skill。

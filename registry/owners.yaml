@@ -1,0 +1,6 @@
+owners:
+  platform-team:
+    display_name: Platform Team
+    contact: platform@example.com
+    description: 仓库默认维护团队
+

@@ -1,0 +1,36 @@
+[project]
+name = "ym-skills"
+version = "0.1.0"
+description = "公司内部 Skill 源码与发布仓库"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.1,<9",
+  "ruff>=0.12.7,<0.13",
+  "pyyaml>=6.0.2,<7",
+]
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["shared"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[project.scripts]
+new-skill = "shared.scripts.new_skill:main"
+validate = "shared.scripts.validate_repo:main"
+package-skill = "shared.scripts.package_skill:main"

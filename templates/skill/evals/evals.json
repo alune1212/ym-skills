@@ -1,0 +1,18 @@
+{
+  "skill_name": "{{SKILL_NAME}}",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请执行一个与 {{SKILL_NAME}} 相关的典型任务。",
+      "expected_output": "输出应符合该 Skill 的约定格式并覆盖核心目标。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "请处理一个带约束条件的 {{SKILL_NAME}} 任务。",
+      "expected_output": "输出应体现约束处理和边界判断。",
+      "files": []
+    }
+  ]
+}
+
