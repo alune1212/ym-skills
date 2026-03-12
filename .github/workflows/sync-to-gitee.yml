@@ -1,0 +1,20 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches:
+      - main   # 改成你的默认分支名，如 master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to Gitee
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/alune1212
+          dst: gitee/alune
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "ym-skills"   # 只同步指定仓库
+          force_update: true
