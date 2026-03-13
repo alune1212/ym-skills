@@ -8,7 +8,7 @@ skills:
   - hr
   - policy
   path: skills/cn-city-wage-social-base
-  description: 查询中国大陆单个城市当前月最低工资、社保基数或缴费基数上下限，并输出带摘录原文与摘录来源直链的 Markdown 报告。
+  description: 查询中国大陆单个城市当前最低工资模块（含月最低工资和小时最低工资标准）、社保基数或缴费基数上下限，并输出带摘录原文与摘录来源直链的 Markdown 报告。
 - name: example-skill
   version: 0.1.0
   status: active
